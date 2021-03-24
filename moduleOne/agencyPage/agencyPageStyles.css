@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Overpass:wght@300;600&family=Ubuntu:wght@400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap");
 
 :root {
   --clr-primary-light-red: hsl(356, 100%, 66%);
@@ -131,6 +131,10 @@ input {
 
 /* reset */
 
+body {
+  font-family: "Lato", sans-serif;
+}
+
 /* utilties */
 
 /* container wrapper */
@@ -220,3 +224,53 @@ input {
 }
 
 /* hide h2 which are title for our section element */
+
+html,
+body {
+  height: 100%;
+}
+
+/* individual sections */
+
+.light {
+  border-bottom: 6px solid rgb(129, 126, 126);
+}
+
+.light p {
+  font-size: var(--fs-400);
+}
+
+.light p + p,
+.dark p + p {
+  margin: 1rem 0 0 0;
+}
+
+strong {
+  color: hsl(160deg, 100%, 30%);
+  font-weight: 900;
+}
+
+.title {
+  font-size: var(--fs-700);
+  font-weight: 900;
+  margin: 0 0 2.8rem 0;
+}
+
+.dark {
+  background-color: darkgray;
+  min-height: 100%;
+}
+
+.sub-title {
+  font-size: var(--fs-500);
+  background-color: hsl(45deg, 100%, 50%);
+  font-weight: 900;
+  margin: 0 0 1.5rem 0;
+}
+
+.dark .max-width-wrapper {
+  background-color: var(--clr-white);
+  border-bottom: 6px solid rgb(129, 126, 126);
+}
+
+/* individual sections */
