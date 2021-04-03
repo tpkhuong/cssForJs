@@ -1,0 +1,13 @@
+.bottomScreen {
+  color: red;
+  background-color: hsl(195deg, 20%, 86%);
+  height: 40%;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  /* we can give the div with the id = "root" a declaration of isolation: isolate 
+  to create a stacking context then we can use the DOM order to put the article behind the
+  the char panel and char model instead of using z-index.
+  */
+  z-index: -1;
+}
