@@ -1,0 +1,8 @@
+.buttonRow {
+  overflow-x: auto;
+  display: flex;
+}
+
+.buttonRow > * {
+  flex: 0 0 10%;
+}
