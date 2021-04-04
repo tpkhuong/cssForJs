@@ -1,8 +1,8 @@
 .buttonRow {
-  overflow-x: auto;
+  overflow-x: scroll;
   display: flex;
 }
 
 .buttonRow > * {
-  flex: 0 0 10%;
+  flex-shrink: 0;
 }
