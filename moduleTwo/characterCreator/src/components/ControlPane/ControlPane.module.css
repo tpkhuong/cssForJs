@@ -1,0 +1,38 @@
+.controlPane {
+  padding: 24px;
+  /* Optical centering */
+  padding-top: 18px;
+  background-color: white;
+  border-radius: 8px;
+  /*
+    HACK: Margin on an outer bound like this is
+    a little gross, but we haven't seen the tools
+    to deal with it yet!
+  */
+  /* code between these comments and code in charEditor.module.css in similar comments allow us to have a
+  horizontal scroll snap
+  */
+  max-width: 285px;
+  scroll-snap-align: start;
+  /* code between these comments and code in charEditor.module.css in similar comments allow us to have a
+  horizontal scroll snap
+  */
+  margin-bottom: 32px;
+}
+
+/* .controlPane:not(:first-child) {
+  margin-inline-start: 16px;
+} */
+
+.title {
+  margin: 0;
+  /* Optical centering */
+  margin-bottom: -4px;
+}
+
+.metadata {
+  margin-left: 16px;
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: hsl(0deg, 0%, 30%);
+}
