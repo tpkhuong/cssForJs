@@ -50,8 +50,17 @@
 }
 
 .controlColumn {
+  /* display: flex;
+  overflow-x: scroll; */
   display: flex;
+  /* code between these comments and code in control pane in similar comments allow us to have a
+  horizontal scroll snap
+  */
   overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  /* code between these comments and code in control pane in similar comments allow us to have a
+  horizontal scroll snap
+  */
 }
 
 @media screen and (min-width: 1000px) {
