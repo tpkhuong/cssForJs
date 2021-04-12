@@ -22,10 +22,12 @@ var ButtonWrapper = styled.button`
   text-transform: uppercase;
   background-color: ${(props) =>
     props.variant == "ghost"
-      ? COLORS.transparentGray15
+      ? "transparent"
       : props.variant == "fill"
       ? COLORS.primary
       : COLORS.white};
+  border-color: ${(props) =>
+    props.variant == "ghost" ? "transparent" : COLORS.primary};
 `;
 
 export default Button;
