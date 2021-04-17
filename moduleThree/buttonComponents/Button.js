@@ -11,7 +11,7 @@ var SIZES = {
     "--fontSize": 16 / 16 + "rem",
     "--padding": "4px 12px",
   },
-  mediun: {
+  medium: {
     "--borderRadius": 2 + "px",
     "--fontSize": 18 / 16 + "rem",
     "--padding": "12px 20px",
