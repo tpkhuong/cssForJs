@@ -12,3 +12,73 @@
 
 .received {
 }
+
+/* exercise sidebar */
+
+.wrapper {
+  display: flex;
+}
+
+nav {
+  width: 220px;
+}
+
+nav,
+main {
+  padding: 16px;
+  border: 2px solid;
+}
+
+main {
+  flex-grow: 1;
+}
+
+/* exercise sidebar */
+
+/* exercise cat */
+
+/* flex: grow(1) shrink(1) basis(0px) */
+/* 
+flex-grow: 0;
+flex-shrink: 1;
+flex-basis: auto;
+*/
+
+.wrapper {
+  display: flex;
+}
+
+img {
+  width: 100%;
+  display: block;
+  height: auto;
+}
+
+.img-wrapper {
+}
+article {
+  flex: 1;
+}
+
+article {
+  margin: 8px;
+  border-radius: 16px;
+  box-shadow: 0px 2px 24px hsl(0deg 0% 0% / 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: ;
+}
+article img {
+  border-radius: 12px 12px 0px 0px;
+}
+article section {
+  padding: 8px 16px 16px;
+}
+article h2 {
+  margin-bottom: 8px;
+}
+article p {
+  font-weight: 300;
+}
+
+/* exercise cat */
