@@ -82,3 +82,98 @@ article p {
 }
 
 /* exercise cat */
+
+/* constraints */
+
+.wrapper {
+  display: flex;
+}
+.biggie {
+  flex: 2;
+  /* max-width with flex box, the element won't get larger than 75px, it can shrink if flex-shrink is set to 1*/
+  max-width: 75px;
+}
+.tiny {
+  flex: 1;
+  /* min-width with flex box, min-width the element won't get smaller than 75px but it can grow if flex-grow is set to 1*/
+  min-width: 75px;
+}
+
+/* constraints */
+
+/* Items should be horizontally centered
+The nav should be 1/3rd of the total space, but no more than 150px
+The main content should max out at 500px */
+
+/* exercise sidebar constraints */
+
+nav {
+  max-width: 150px;
+  flex: 1;
+}
+
+main {
+  flex: 2;
+  max-width: 500px;
+}
+
+/* exercise sidebar constraints */
+
+/* exercise facebook layout */
+
+.wrapper {
+  display: flex;
+}
+nav,
+aside.contacts {
+  min-width: 150px;
+  max-width: 250px;
+  flex: 1;
+}
+main {
+  flex: 2;
+}
+
+@media (max-width: 700px) {
+  nav {
+    display: none;
+  }
+}
+
+/* josh's solution */
+
+.wrapper {
+  display: flex;
+}
+nav,
+aside.contacts {
+  min-width: 150px;
+  max-width: 250px;
+  flex-shrink: 9999999;
+  flex-basis: 250px;
+}
+main {
+  flex: 1;
+  flex-basis: 500px;
+}
+
+/* shorthand */
+
+.wrapper {
+  display: flex;
+}
+nav,
+aside.contacts {
+  min-width: 150px;
+  max-width: 250px;
+  flex: 0 999999 250px;
+}
+main {
+  flex: 1 1 500px;
+}
+
+/* shorthand */
+
+/* josh's solution */
+
+/* exercise facebook layout */
