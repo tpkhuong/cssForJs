@@ -209,3 +209,77 @@ article:last-child {
 }
 
 /* exercise deconstructed pancake */
+
+/* exercise superheader */
+
+header {
+  display: flex;
+  gap: 8px;
+}
+
+.margin-right-8px {
+  margin-inline-end: 8px;
+}
+.margin-left {
+  margin-inline-start: auto;
+}
+
+/* exercise superheader */
+
+/* exercise photo viewer */
+
+.photo-viewer {
+  display: flex;
+  gap: 16px;
+}
+.photo-roll {
+  display: flex;
+  flex-flow: column;
+  /* we can set a width or flex: 0 0 flex-basis on this element instead of setting a widht on the img containers */
+  gap: 16px;
+}
+img {
+  width: 100%;
+}
+.clickable-photo {
+  width: 250px;
+}
+
+.photo-roll {
+  flex-shrink: 0;
+}
+
+.main-photo {
+  flex: 1 1;
+  max-width: 800px;
+  line-height: 0px;
+}
+
+.actions {
+  display: flex;
+  margin-block-start: auto;
+}
+
+.actions button:first-child {
+  margin-right: auto;
+}
+
+/* exercise photo viewer */
+
+/* table of content */
+
+.wrapper {
+  display: flex;
+}
+main {
+  flex: 1;
+}
+aside {
+  min-width: 200px;
+}
+
+/* table of content */
+
+/* combining layout modes */
+
+/* combining layout modes */
