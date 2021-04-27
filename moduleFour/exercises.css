@@ -282,4 +282,132 @@ aside {
 
 /* combining layout modes */
 
+section {
+  display: flex;
+  gap: 32px;
+  border: 3px solid hotpink;
+}
+
+.col {
+  flex: 1;
+  padding: 16px;
+  position: absolute;
+  flex-direction: column;
+}
+
+/* josh solution */
+
+section {
+  display: flex;
+  gap: 32px;
+  border: 3px solid deeppink;
+  overflow: auto;
+}
+
+.col {
+  flex: 1;
+  padding: 16px;
+}
+
+.col:first-of-type {
+  /* we had sticky on the second .col */
+  position: sticky;
+  top: 0;
+}
+
+.col:last-of-type {
+  height: 0px;
+}
+
+/* josh solution */
+
 /* combining layout modes */
+
+/* holy grail layout */
+
+html,
+body {
+  height: 100%;
+}
+
+.wrapper {
+  display: flex;
+  flex-flow: column;
+  min-height: 100%;
+}
+
+.middle {
+  display: flex;
+  flex: 1;
+}
+
+.middle .box {
+  flex: 1 1 150px;
+}
+
+.box:nth-child(2) {
+  flex: 2 1 400px;
+}
+
+/* or */
+
+html,
+body {
+  height: 100%;
+}
+.wrapper {
+  display: flex;
+  flex-flow: column;
+  min-height: 100%;
+}
+
+.middle {
+  display: flex;
+  flex: 1;
+}
+
+nav,
+aside {
+  flex: 1;
+}
+
+.middle .box:nth-child(2) {
+  flex: 3;
+}
+
+/* holy grail layout */
+
+/* sticky sidebar */
+
+.wrapper {
+  display: flex;
+  /* use align-items: flex-start. better to use align-self on the element we declared the declaration of position: sticky */
+}
+
+nav {
+  /* no wiggle room because the default value for align-items in a flexbox container is stretch. There will be no room for it to stick.
+  position: sticky will stick depending on its parent.
+  */
+  position: sticky;
+  top: 0;
+  height: 0px;
+}
+
+main {
+  flex: 1;
+}
+
+/* sticky sidebar */
+
+/* overstuffed and centered */
+
+.wrapper {
+  width: 50vw;
+}
+img {
+  display: block;
+  width: 300px;
+  margin-top: 16px;
+}
+
+/* overstuffed and centered */
