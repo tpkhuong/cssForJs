@@ -403,11 +403,35 @@ main {
 
 .wrapper {
   width: 50vw;
+  display: flex;
+  flex-flow: column;
 }
+img {
+  position: sticky;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  display: block;
+  width: 300px;
+  margin-inline: auto;
+}
+
+/* josh soulution */
+
+.wrapper {
+  width: 50vw;
+  display: flex;
+  flex-direction: column;
+}
+
 img {
   display: block;
   width: 300px;
   margin-top: 16px;
+  align-self: center;
 }
+
+/* josh soulution */
 
 /* overstuffed and centered */
