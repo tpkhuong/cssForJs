@@ -28,6 +28,7 @@ const Header = () => {
 
 const MainHeader = styled.div`
   padding: 20px 32px;
+  padding-inline-end: 96px;
   border-bottom: 1px solid ${COLORS.gray[300]};
   display: flex;
   align-items: baseline;
