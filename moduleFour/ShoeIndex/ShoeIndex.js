@@ -47,8 +47,8 @@ const Wrapper = styled.div`
 const LeftColumn = styled.div``;
 
 const MainColumn = styled.div`
-  margin-inline-start: auto;
-  flex: 0 1 1200px;
+  margin-inline: auto;
+  flex: 0 1 1000px;
 `;
 
 const Header = styled.header`
