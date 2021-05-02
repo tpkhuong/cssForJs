@@ -38,6 +38,7 @@ const HelpLink = styled.a`
   color: inherit;
   text-decoration: none;
   outline-offset: 2px;
+  /* we can use a spacer instead of using margin-left and margin-right on our middle item between the seachbar and shop icon */
   margin-inline: 16px;
 
   &:not(:focus-visible) {
