@@ -21,6 +21,10 @@ const Wrapper = styled.div`
   & > * {
     flex: 1 1 250px;
   }
+
+  & a:last-child {
+    flex: 1 1 500px;
+  }
 `;
 
 export default ShoeGrid;
