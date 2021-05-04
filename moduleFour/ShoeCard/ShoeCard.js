@@ -46,6 +46,7 @@ const ShoeCard = ({
           <ColorInfo>{pluralize("Color", numOfColors)}</ColorInfo>
         </Row>
       </Wrapper>
+      <ShoeTag>{variant}</ShoeTag>
     </Link>
   );
 };
@@ -69,6 +70,8 @@ const Image = styled.img`
 
 const Row = styled.div`
   font-size: 1rem;
+  display: flex;
+  justify-content: space-between;
 `;
 
 const Name = styled.h3`
@@ -85,6 +88,11 @@ const ColorInfo = styled.p`
 const SalePrice = styled.span`
   font-weight: ${WEIGHTS.medium};
   color: ${COLORS.primary};
+`;
+
+const ShoeTag = styled.span`
+  display: block;
+  color: blue;
 `;
 
 export default ShoeCard;
