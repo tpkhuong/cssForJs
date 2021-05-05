@@ -40,13 +40,23 @@ const ShoeCard = ({
         <Spacer size={12} />
         <Row>
           <Name>{name}</Name>
-          <Price>{formatPrice(price)}</Price>
+          <Price onSale={variant}>
+            {formatPrice(price)}
+            <SashedPrice noShow={variant}></SashedPrice>
+          </Price>
         </Row>
         <Row>
           <ColorInfo>{pluralize("Color", numOfColors)}</ColorInfo>
+          <SalePrice notShow={variant}>{formatPrice(salePrice)}</SalePrice>
         </Row>
       </Wrapper>
-      <ShoeTag>{variant}</ShoeTag>
+      <ShoeTag isDefault={variant} notDefault={variant}>
+        {variant == "on-sale"
+          ? "Sale"
+          : variant == "new-release"
+          ? "Just release!"
+          : ""}
+      </ShoeTag>
     </Link>
   );
 };
@@ -79,7 +89,11 @@ const Name = styled.h3`
   color: ${COLORS.gray[900]};
 `;
 
-const Price = styled.span``;
+const Price = styled.span`
+  position: relative;
+  color: ${(props) =>
+    props.onSale == "on-sale" ? COLORS.gray[700] : "inherit"};
+`;
 
 const ColorInfo = styled.p`
   color: ${COLORS.gray[700]};
@@ -88,11 +102,33 @@ const ColorInfo = styled.p`
 const SalePrice = styled.span`
   font-weight: ${WEIGHTS.medium};
   color: ${COLORS.primary};
+  opacity: ${(props) => (props.notShow == "on-sale" ? 1 : 0)};
 `;
 
 const ShoeTag = styled.span`
   display: block;
-  color: blue;
+  font-weight: ${WEIGHTS[600]};
+  background-color: ${(props) =>
+    props.notDefault == "on-sale"
+      ? COLORS.secondary
+      : props.notDefault == "new-release"
+      ? COLORS.primary
+      : "black"};
+  color: ${COLORS.white};
+  opacity: ${(props) => (props.isDefault == "default" ? 0 : 1)};
+`;
+
+const SashedPrice = styled.span`
+  height: 0.5px;
+  width: 100%;
+  background-color: ${COLORS.gray[700]};
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  margin-block: auto;
+  opacity: ${(props) => (props.noShow == "on-sale" ? 1 : 0)};
 `;
 
 export default ShoeCard;
