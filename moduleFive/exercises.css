@@ -227,3 +227,73 @@ body {
 ul {
   padding: 0;
 }
+
+/* stacked cards */
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* order of CSS variable is important too. when we had var(--phone-spacer, var(--tablet-spacer, 8px)) code didn't work.
+  reason code didn't work because when screen is at 350px --phone-spacer is declared with CSS variables/properties once a variable is declared
+  it will not go to the fallback. 
+  the way we have below where --tablet-spacer won't be declared until the screen is at 500px. 
+  */
+  gap: var(--tablet-spacer, var(--phone-spacer, 8px));
+  padding: var(--tablet-spacer, var(--phone-spacer, 8px));
+}
+article {
+  border-radius: var(--tablet-spacer, var(--phone-spacer, 8px));
+  padding: var(--tablet-spacer, var(--phone-spacer, 8px));
+}
+
+@media (min-width: 350px) {
+  main {
+    --phone-spacer: 16px;
+  }
+  /* article {
+    border-radius: 16px;
+    padding: 16px;
+  } */
+}
+
+@media (min-width: 500px) {
+  main {
+    --tablet-spacer: 32px;
+  }
+  /* article {
+    border-radius: 32px;
+    padding: 32px;
+  } */
+}
+
+/* josh's solution */
+
+main {
+  --spacing: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing);
+  padding: var(--spacing);
+}
+article {
+  border-radius: var(--spacing);
+  padding: var(--spacing);
+}
+
+@media (min-width: 350px) {
+  main {
+    --spacing: 16px;
+  }
+}
+
+@media (min-width: 500px) {
+  main {
+    --spacing: 32px;
+  }
+}
+
+/* josh's solution */
+
+/* stacked cards */
