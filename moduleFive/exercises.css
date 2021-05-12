@@ -496,3 +496,262 @@ a {
 /* josh's solution */
 
 /* dark mode */
+
+/* art project */
+
+html {
+  --box-size: 75px;
+}
+
+.box {
+  width: var(--box-size);
+  height: var(--box-size);
+  /*
+    Here's a quick example, to get you started!
+    We use “--index”, a number from 1 to 16,
+    to derive the “hue” for each square.
+    
+    If you're not sure where to start,
+    try tweaking these numbers!
+    
+    One last tip: using a gradient instead
+    of a solid color opens lots of exciting
+    possibilities!
+  */
+  background: hsl(calc(var(--index) * -7deg) 100% 50%);
+  background-image: linear-gradient(
+    calc(var(--deg) - 2deg),
+    hsl(calc(var(--index) * -7deg) 100% 50%),
+    hsl(calc(var(--index) * 50deg) 100% 50%)
+  );
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  width: calc(var(--box-size) * 4);
+  height: calc(var(--box-size) * 4);
+}
+
+/*
+  Attach a unique index to each box.
+  Normally, we would do this in JS.
+*/
+.box:nth-of-type(1) {
+  --index: 1;
+  --deg: 15deg;
+  --color-deg: 5deg;
+}
+.box:nth-of-type(2) {
+  --index: 2;
+  --deg: 15deg;
+  --color-deg: 5deg;
+  border-radius: 50%;
+}
+.box:nth-of-type(3) {
+  --index: 3;
+  --deg: 15deg;
+  --color-deg: 5deg;
+}
+.box:nth-of-type(4) {
+  --index: 4;
+  --deg: 15deg;
+  --color-deg: 5deg;
+}
+.box:nth-of-type(5) {
+  --index: 5;
+  --deg: 15deg;
+  --color-deg: 5deg;
+}
+.box:nth-of-type(6) {
+  --index: 6;
+  --deg: 15deg;
+  --color-deg: 5deg;
+  border-radius: 50%;
+}
+.box:nth-of-type(7) {
+  --index: 7;
+  --deg: 15deg;
+  --color-deg: 5deg;
+}
+.box:nth-of-type(8) {
+  --index: 8;
+  --deg: 15deg;
+  --color-deg: 5deg;
+  border-radius: 50%;
+}
+.box:nth-of-type(9) {
+  --index: 9;
+  --deg: 15deg;
+  --color-deg: 5deg;
+}
+.box:nth-of-type(10) {
+  --index: 10;
+  --deg: 15deg;
+  --color-deg: 5deg;
+}
+.box:nth-of-type(11) {
+  --index: 11;
+  --deg: 15deg;
+  --color-deg: 5deg;
+  border-radius: 50%;
+}
+.box:nth-of-type(12) {
+  --index: 12;
+  --deg: 15deg;
+  --color-deg: 5deg;
+}
+.box:nth-of-type(13) {
+  --index: 13;
+  --deg: 15deg;
+  --color-deg: 5deg;
+  border-radius: 50%;
+}
+.box:nth-of-type(14) {
+  --index: 14;
+  --deg: 15deg;
+  --color-deg: 5deg;
+}
+.box:nth-of-type(15) {
+  --index: 15;
+  --deg: 15deg;
+  --color-deg: 5deg;
+  border-radius: 50%;
+}
+.box:nth-of-type(16) {
+  --index: 16;
+  --deg: 15deg;
+  --color-deg: 5deg;
+}
+* {
+  box-sizing: border-box;
+}
+
+/* art project */
+
+html {
+  --box-size: 100px;
+}
+
+.box {
+  width: var(--box-size);
+  height: var(--box-size);
+  /*
+    Here's a quick example, to get you started!
+    We use “--index”, a number from 1 to 16,
+    to derive the “hue” for each square.
+    
+    If you're not sure where to start,
+    try tweaking these numbers!
+    
+    One last tip: using a gradient instead
+    of a solid color opens lots of exciting
+    possibilities!
+  */
+  background-image: linear-gradient(
+    var(--deg, 45deg),
+    hsl(calc(var(--index) * var(--color-deg)) 100% 50%),
+    hsl(calc(var(--index) * 50deg) 100% 50%)
+  );
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  width: calc(var(--box-size) * 5);
+  height: calc(var(--box-size) * 4);
+}
+
+/*
+  Attach a unique index to each box.
+  Normally, we would do this in JS.
+*/
+.box:nth-of-type(1) {
+  --index: 1;
+  --deg: 15deg;
+  --color-deg: 5deg;
+}
+.box:nth-of-type(2) {
+  --index: 2;
+  --deg: 15deg;
+  --color-deg: 8deg;
+  border-radius: 50%;
+}
+.box:nth-of-type(3) {
+  --index: 3;
+  --deg: 15deg;
+  --color-deg: 18deg;
+}
+.box:nth-of-type(4) {
+  --index: 4;
+  --deg: 15deg;
+  --color-deg: 28deg;
+}
+.box:nth-of-type(5) {
+  --index: 5;
+  --deg: 15deg;
+  --color-deg: 35deg;
+}
+.box:nth-of-type(6) {
+  --index: 6;
+  --deg: 15deg;
+  --color-deg: 55deg;
+  border-radius: 50%;
+}
+.box:nth-of-type(7) {
+  --index: 7;
+  --deg: 15deg;
+  --color-deg: 10deg;
+}
+.box:nth-of-type(8) {
+  --index: 8;
+  --deg: 15deg;
+  --color-deg: 90deg;
+  border-radius: 50%;
+}
+.box:nth-of-type(9) {
+  --index: 9;
+  --deg: 15deg;
+  --color-deg: 70deg;
+}
+.box:nth-of-type(10) {
+  --index: 10;
+  --deg: 15deg;
+  --color-deg: 75deg;
+}
+.box:nth-of-type(11) {
+  --index: 11;
+  --deg: 15deg;
+  --color-deg: 115deg;
+  border-radius: 50%;
+}
+.box:nth-of-type(12) {
+  --index: 12;
+  --deg: 15deg;
+  --color-deg: 135deg;
+}
+.box:nth-of-type(13) {
+  --index: 13;
+  --deg: 15deg;
+  --color-deg: 145deg;
+  border-radius: 50%;
+}
+.box:nth-of-type(14) {
+  --index: 14;
+  --deg: 15deg;
+  --color-deg: 190deg;
+}
+.box:nth-of-type(15) {
+  --index: 15;
+  --deg: 15deg;
+  --color-deg: 200deg;
+  border-radius: 50%;
+}
+.box:nth-of-type(16) {
+  --index: 16;
+  --deg: 15deg;
+  --color-deg: 210deg;
+}
+* {
+  box-sizing: border-box;
+}
