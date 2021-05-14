@@ -755,3 +755,26 @@ html {
 * {
   box-sizing: border-box;
 }
+
+/* Max-height hero */
+
+html,
+body {
+  height: 100%;
+}
+
+.hero {
+  /* Change me: */
+  height: clamp(500px, 80vh, min-content);
+  max-height: 100%;
+}
+
+/* josh's solution */
+
+.hero {
+  min-height: min(80vh, 500px);
+}
+
+/* josh's solution */
+
+/* Max-height hero */
