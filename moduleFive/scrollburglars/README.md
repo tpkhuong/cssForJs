@@ -34,6 +34,13 @@ Warp and Weave is an online course that teaches weavers how to use color effecti
 
 This page was built using a site builder, and the markup is a bit of a mess. Feel free to fix this solution in the devtools by adding CSS or deleting superfluous HTML elements.
 
+<!-- delete the section until we find the element causing the problem -->
+<!-- look in chucks -->
+<!-- the negative margin-right was causing the problem  -->
+<!-- make global fix:  find the element that is the wrapper and use overflow: hidden. One con of using overflow: hidden
+it will cause and element with position:sticky to not work.
+-->
+
 ## Exercise 3: Blog example
 
 I created this third and final example, and it's a tricky one!
