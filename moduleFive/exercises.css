@@ -778,3 +778,26 @@ body {
 /* josh's solution */
 
 /* Max-height hero */
+
+/* fluid heading */
+
+h2 {
+  font-size: clamp(1.5rem, 8vw - 2rem, 3rem);
+}
+
+/* fluid heading */
+
+/* fluid spacing */
+
+ul {
+  display: flex;
+  gap: clamp(1rem, 13vw - 2.5rem, 5rem);
+}
+
+/* Additional challenges
+If you'd like more practice using this calculator, here are some additional values to try and match:
+
+Minimum 2rem at 400px, Maximum 4.5rem at 1400px
+Minimum 3rem at 800px, Maximum 4rem at 1600px
+Minimum 2rem at 1000px, Maximum 4rem at ~1535px */
+/* fluid spacing */
