@@ -797,7 +797,27 @@ ul {
 /* Additional challenges
 If you'd like more practice using this calculator, here are some additional values to try and match:
 
+we find the slope that is the difference between the minimum and maximum px
 Minimum 2rem at 400px, Maximum 4.5rem at 1400px
 Minimum 3rem at 800px, Maximum 4rem at 1600px
 Minimum 2rem at 1000px, Maximum 4rem at ~1535px */
 /* fluid spacing */
+
+/* Minimum 2rem at 400px, Maximum 4.5rem at 1400px */
+ul {
+  display: flex;
+  gap: clamp(2rem, 4vw + 1rem, 4.5rem);
+}
+
+/* Minimum 3rem at 800px, Maximum 4rem at 1600px */
+ul {
+  display: flex;
+  gap: clamp(3rem, 2vw + 2rem, 4rem);
+}
+
+/* Minimum 2rem at 1000px, Maximum 4rem at ~1535px */
+
+ul {
+  display: flex;
+  gap: clamp(2rem, 6vw - 1.75rem, 4rem);
+}
