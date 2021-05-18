@@ -1,10 +1,12 @@
-import React from 'react';
-import styled from 'styled-components/macro';
+import React from "react";
+import styled from "styled-components/macro";
 
-import { COLORS, WEIGHTS } from '../../constants';
-import Logo from '../Logo';
-import SuperHeader from '../SuperHeader';
-import MobileMenu from '../MobileMenu';
+import { COLORS, WEIGHTS, QUERIES } from "../../constants";
+import Logo from "../Logo";
+import SuperHeader from "../SuperHeader";
+import MobileMenu from "../MobileMenu";
+import Icon from "../Icon";
+import UnstyledButton from "../UnstyledButton";
 
 const Header = () => {
   const [showMobileMenu, setShowMobileMenu] = React.useState(false);
@@ -30,6 +32,17 @@ const Header = () => {
           <NavLink href="/collections">Collections</NavLink>
         </Nav>
         <Side />
+        <MobileMenuIconsContainer>
+          <UnstyledButton>
+            <Icon color={`${COLORS.black}`} id="shopping-bag" strokeWidth={1} />
+          </UnstyledButton>
+          <UnstyledButton>
+            <Icon color={`${COLORS.black}`} id="search" strokeWidth={1} />
+          </UnstyledButton>
+          <UnstyledButton>
+            <Icon color={`${COLORS.black}`} id="menu" strokeWidth={1} />
+          </UnstyledButton>
+        </MobileMenuIconsContainer>
       </MainHeader>
 
       <MobileMenu
@@ -39,6 +52,13 @@ const Header = () => {
     </header>
   );
 };
+
+const MobileMenuIconsContainer = styled.div`
+  border: 1px solid red;
+  display: flex;
+  align-self: stretch;
+  align-items: center;
+`;
 
 const MainHeader = styled.div`
   display: flex;
