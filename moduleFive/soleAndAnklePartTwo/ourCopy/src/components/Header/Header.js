@@ -59,10 +59,15 @@ const MobileMenuIconsContainer = styled.div`
   align-self: stretch;
   align-items: center;
   /* since this flex container is also a flex item we can use the flex short hand set restriction on the width using min-width and max-width */
+  /* min-width: 5rem;
+  max-width: 8rem;
+  justify-content: space-between;
+  flex: 1; */
   /* since this flex container is also a flex item we can use the flex short hand set restriction on the width using min-width and max-width */
 
   /* or we can use clamp on gap property  */
-  @media ${QUERIES.phoneAndUp} {
+  gap: clamp(1.5rem, 1rem, 2rem);
+  @media ${QUERIES.tabletAndUp} {
     display: none;
   }
 `;
@@ -77,7 +82,7 @@ const MainHeader = styled.div`
 
 const Nav = styled.nav`
   display: none;
-  @media ${QUERIES.phoneAndUp} {
+  @media ${QUERIES.tabletAndUp} {
     display: flex;
     gap: 48px;
     margin: 0px 48px;
