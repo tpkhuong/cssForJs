@@ -39,7 +39,7 @@ const Header = () => {
           <UnstyledButton>
             <Icon color={`${COLORS.black}`} id="search" strokeWidth={1} />
           </UnstyledButton>
-          <UnstyledButton>
+          <UnstyledButton onClick={() => setShowMobileMenu(true)}>
             <Icon color={`${COLORS.black}`} id="menu" strokeWidth={1} />
           </UnstyledButton>
         </MobileMenuIconsContainer>
