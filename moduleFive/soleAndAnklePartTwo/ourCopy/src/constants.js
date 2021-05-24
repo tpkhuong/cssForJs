@@ -10,6 +10,7 @@ export const COLORS = {
   primary: "hsl(340deg 65% 47%)",
   secondary: "hsl(240deg 60% 63%)",
   black: `hsl(0, 0%,0%)`,
+  red: "hsl(0,100%,50%)",
 };
 
 export const BREAKPOINTS = {
