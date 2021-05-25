@@ -24,9 +24,9 @@ const MobileMenu = ({ isOpen, onDismiss }) => {
       >
         <ModalTitle id="dialog1-label">Navigation Menu</ModalTitle>
         {/* <button onClick={onDismiss}>Dismiss menu</button> */}
-        <UnstyledButton>
+        <CloseBtnModal>
           <Icon onClick={onDismiss} id="close" strokeWidth={1} />
-        </UnstyledButton>
+        </CloseBtnModal>
         <MobileNav>
           <MobileNavlink href="/sale">Sale</MobileNavlink>
           <MobileNavlink href="/new">New&nbsp;Releases</MobileNavlink>
@@ -35,11 +35,11 @@ const MobileMenu = ({ isOpen, onDismiss }) => {
           <MobileNavlink href="/kids">Kids</MobileNavlink>
           <MobileNavlink href="/collections">Collections</MobileNavlink>
         </MobileNav>
-        <footer>
+        <MobileMenuFooter>
           <a href="/terms">Terms and Conditions</a>
           <a href="/privacy">Privacy Policy</a>
           <a href="/contact">Contact Us</a>
-        </footer>
+        </MobileMenuFooter>
       </MobileMenuWrapper>
     </ModalBackdrop>
   );
@@ -55,6 +55,14 @@ const ModalBackdrop = styled.div`
   z-index: 1;
 `;
 
+/***** getting the hang of composition with styled components, using the styles from UnstyledButton with our closebtnmodal we can add specific styled declaration to this btn *****/
+const CloseBtnModal = styled(UnstyledButton)`
+  border: 1px solid red;
+  width: min-content;
+  margin-inline-start: auto;
+`;
+/***** getting the hang of composition with styled components, using the styles from UnstyledButton with our closebtnmodal we can add specific styled declaration to this btn *****/
+
 const ModalTitle = styled.span`
   position: absolute;
   overflow: hidden;
@@ -67,7 +75,18 @@ const ModalTitle = styled.span`
 `;
 
 const MobileMenuWrapper = styled.div`
+  top: 0;
+  right: 0;
+  bottom: 0;
+  /* when we had left: 0 or didn't declare a left property declaration and used padding: 32px; the white background covered the whole screen(we lost the opacity black background)
+  we had to used left: 75px (pushing 75px from the left) to get our desired look to match the design in figma
+  */
+  left: 75px;
+  padding: 32px;
+  padding-inline-end: 22px;
   position: fixed;
+  display: flex;
+  flex-direction: column;
   border: 1px solid ${COLORS.red};
   /* width: 100%; */
   /* z-index: 1; */
@@ -76,8 +95,12 @@ const MobileMenuWrapper = styled.div`
 `;
 
 const MobileNav = styled.nav`
-  text-align: center;
-  font-weight: ${WEIGHTS.bold};
+  text-align: left;
+  font-weight: ${WEIGHTS.medium};
+  margin-block-start: auto;
+  & > * + * {
+    margin-block-start: 22px;
+  }
 `;
 const MobileDismissButton = styled.button``;
 
@@ -85,13 +108,20 @@ const MobileNavlink = styled.a`
   text-decoration: none;
   color: ${COLORS.gray[900]};
   display: block;
-  padding: 16px;
+  font-size: calc((18 / 16) * 1rem);
+  /* padding: 16px; */
   /* border: 1px solid ${COLORS.gray[700]}; */
   &:hover {
     text-decoration: underline;
   }
 `;
 
-const MobileMenuFooter = styled.footer``;
+const MobileMenuFooter = styled.footer`
+  margin-block-start: auto;
+  /* gray-700
+  font-size: 14px;
+  font-weight: normal;
+  */
+`;
 
 export default MobileMenu;
