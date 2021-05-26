@@ -118,6 +118,19 @@ const MobileNavlink = styled.a`
 
 const MobileMenuFooter = styled.footer`
   margin-block-start: auto;
+  font-size: calc((14 / 16) * 1rem);
+
+  & > * {
+    display: block;
+    text-decoration: none;
+    color: ${COLORS.gray[700]};
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  &:not(:last-child) {
+    color: red;
+  }
   /* gray-700
   font-size: 14px;
   font-weight: normal;
