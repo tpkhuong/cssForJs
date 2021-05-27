@@ -53,6 +53,9 @@ const ModalBackdrop = styled.div`
   bottom: 0;
   left: 0;
   z-index: 1;
+  @media ${QUERIES.tabletAndUp} {
+    display: none;
+  } ;
 `;
 
 /***** getting the hang of composition with styled components, using the styles from UnstyledButton with our closebtnmodal we can add specific styled declaration to this btn *****/
@@ -114,6 +117,10 @@ const MobileNavlink = styled.a`
   &:hover {
     text-decoration: underline;
   }
+  &:focus {
+    outline-offset: 2px;
+    outline: 1px dashed blue;
+  }
 `;
 
 const MobileMenuFooter = styled.footer`
@@ -127,10 +134,14 @@ const MobileMenuFooter = styled.footer`
     &:hover {
       text-decoration: underline;
     }
+    /* we want to select all the a that is a child of our footer except the last child
+    when we had this declaration outside of & > * {} we were selecting the all footer that is except the footer that is the last child
+    */
+    &:not(:last-child) {
+      margin-block-end: 14px;
+    }
   }
-  &:not(:last-child) {
-    color: red;
-  }
+
   /* gray-700
   font-size: 14px;
   font-weight: normal;
