@@ -84,7 +84,7 @@ const Nav = styled.nav`
   display: none;
   @media ${QUERIES.tabletAndUp} {
     display: flex;
-    gap: 48px;
+    gap: clamp(1rem, 4.6vw - 1.5rem, 4rem);
     margin: 0px 48px;
   }
 `;
