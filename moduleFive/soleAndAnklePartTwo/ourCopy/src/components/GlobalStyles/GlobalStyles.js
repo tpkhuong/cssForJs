@@ -1,4 +1,5 @@
-import { createGlobalStyle } from 'styled-components/macro';
+import { createGlobalStyle } from "styled-components/macro";
+import { COLORS, WEIGHTS } from "../../constants";
 
 const GlobalStyles = createGlobalStyle`
 /* http://meyerweb.com/eric/tools/css/reset/
@@ -63,6 +64,7 @@ table {
     This ensures that all portal content (modals and tooltips) will
     float above the app.
   */
+
   isolation: isolate;
 }
 
