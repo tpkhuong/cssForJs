@@ -31,7 +31,7 @@ const Header = () => {
           <NavLink href="/kids">Kids</NavLink>
           <NavLink href="/collections">Collections</NavLink>
         </Nav>
-        <Side />
+        <RightSide />
         <MobileMenuIconsContainer>
           <UnstyledButton>
             <Icon color={`${COLORS.black}`} id="shopping-bag" strokeWidth={1} />
@@ -67,6 +67,7 @@ const MobileMenuIconsContainer = styled.div`
 
   /* or we can use clamp on gap property  */
   gap: clamp(1.5rem, 1rem, 2rem);
+  margin-inline-start: auto;
   @media ${QUERIES.tabletAndUp} {
     display: none;
   }
@@ -84,12 +85,17 @@ const Nav = styled.nav`
   display: none;
   @media ${QUERIES.tabletAndUp} {
     display: flex;
+    flex: 1;
+    justify-content: space-between;
     gap: clamp(1rem, 4.6vw - 1.5rem, 4rem);
-    margin: 0px 48px;
+    /* moving the margin left and right with flex: 1 will let our nav bar grow to fit the rest of the header space minus the space of the logo and empty div */
+    /* margin: 0px 48px; */
+    /* in our MobileMenuIconsContainer component in this module file we want to put margin-inline-start to push that container to the end so it sits on the right */
   }
 `;
 
 const Side = styled.div`
+  max-width: 275px;
   flex: 1;
 `;
 
@@ -103,6 +109,10 @@ const NavLink = styled.a`
   &:first-of-type {
     color: ${COLORS.secondary};
   }
+`;
+
+const RightSide = styled(Side)`
+  max-width: 200px;
 `;
 
 export default Header;
