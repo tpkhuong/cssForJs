@@ -227,7 +227,9 @@ top: 0;
 left: 0;
 right: 0;
 bottom: 0;
-background: hsla(220deg 5% 40% / .8);
+/* using CSS variable for unique color below */
+/* background: hsla(220deg 5% 40% / .8); */
+background: var(--color-backdrop);
 display: flex;
 justify-content: flex-end;
 `;
@@ -251,7 +253,7 @@ const Closebutton = styled.button`
   right: 16px;
   /* give it padding to extend the click radius */
   /* we have to offset our top and right to make the padding work */
-  top: 10px;
+top: 10px;
   right: 0px;
   padding: 16px;
   /* we want to line up the close button with the hamburger button */
