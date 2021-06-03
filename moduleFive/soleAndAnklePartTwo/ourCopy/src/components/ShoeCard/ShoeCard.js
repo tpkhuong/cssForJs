@@ -44,7 +44,9 @@ const ShoeCard = ({
           <Name>{name}</Name>
           <Price
             style={{
-              "--color": variant === "on-sale" ? COLORS.gray[700] : undefined,
+              // we can use CSS variables here too, we have to put it in a string
+              "--color":
+                variant === "on-sale" ? "var(--color-gray-700)" : undefined,
               "--text-decoration":
                 variant === "on-sale" ? "line-through" : undefined,
             }}
