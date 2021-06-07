@@ -60,6 +60,7 @@ const ModalBackdrop = styled.div`
 
 /***** getting the hang of composition with styled components, using the styles from UnstyledButton with our closebtnmodal we can add specific styled declaration to this btn *****/
 const CloseBtnModal = styled(UnstyledButton)`
+  border: 1px solid var(--color-red);
   border: 1px solid red;
   width: min-content;
   margin-inline-start: auto;
@@ -90,15 +91,18 @@ const MobileMenuWrapper = styled.div`
   position: fixed;
   display: flex;
   flex-direction: column;
+  border: 1px solid var(--color-red);
   border: 1px solid ${COLORS.red};
   /* width: 100%; */
   /* z-index: 1; */
+  background-color: var(--color-white);
   background-color: ${COLORS.white};
   /* add background color and border around links */
 `;
 
 const MobileNav = styled.nav`
   text-align: left;
+  font-weight: var(--font-weight-600);
   font-weight: ${WEIGHTS.medium};
   margin-block-start: auto;
   & > * + * {
@@ -130,6 +134,7 @@ const MobileMenuFooter = styled.footer`
   & > * {
     display: block;
     text-decoration: none;
+    color: var(--color-gray-700);
     color: ${COLORS.gray[700]};
     &:hover {
       text-decoration: underline;
