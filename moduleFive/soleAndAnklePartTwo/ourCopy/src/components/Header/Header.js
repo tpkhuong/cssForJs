@@ -54,6 +54,7 @@ const Header = () => {
 };
 
 const MobileMenuIconsContainer = styled.div`
+  border: 1px solid var(--color-red);
   border: 1px solid red;
   display: flex;
   align-self: stretch;
@@ -78,6 +79,7 @@ const MainHeader = styled.div`
   align-items: baseline;
   padding: 18px 32px;
   height: 72px;
+  border-bottom: 1px solid var(--color-gray-300);
   border-bottom: 1px solid ${COLORS.gray[300]};
 `;
 
@@ -103,10 +105,13 @@ const NavLink = styled.a`
   font-size: 1.125rem;
   text-transform: uppercase;
   text-decoration: none;
+  color: var(--color-gray-900);
   color: ${COLORS.gray[900]};
+  font-weight: var(--font-weight-600);
   font-weight: ${WEIGHTS.medium};
 
   &:first-of-type {
+    color: var(--color-secondary);
     color: ${COLORS.secondary};
   }
 `;
@@ -119,16 +124,16 @@ export default Header;
 
 /***** josh's solution *****/
 
-import React from 'react';
-import styled from 'styled-components/macro';
+import React from "react";
+import styled from "styled-components/macro";
 
-import { COLORS, QUERIES, WEIGHTS } from '../../constants';
-import Logo from '../Logo';
-import Icon from '../Icon';
-import UnstyledButton from '../UnstyledButton';
-import SuperHeader from '../SuperHeader';
-import MobileMenu from '../MobileMenu';
-import VisuallyHidden from '../VisuallyHidden';
+import { COLORS, QUERIES, WEIGHTS } from "../../constants";
+import Logo from "../Logo";
+import Icon from "../Icon";
+import UnstyledButton from "../UnstyledButton";
+import SuperHeader from "../SuperHeader";
+import MobileMenu from "../MobileMenu";
+import VisuallyHidden from "../VisuallyHidden";
 
 const Header = () => {
   const [showMobileMenu, setShowMobileMenu] = React.useState(false);
@@ -165,15 +170,16 @@ const Header = () => {
       </MainHeader>
 
       <MobileMenu></MobileMenu>
-      </Header>
-  }
-	const MainHeader = styled.div`
+    </Header>;
+  };
+};
+const MainHeader = styled.div`
   padding: 18px 32px;
-    /* remove the fixed height to remove the vertical scroll bar */
+  /* remove the fixed height to remove the vertical scroll bar */
   /* height: 72px; */
   border-bottom: 1px solid ${COLORS.gray[300]};
-    overflow: auto;
-    
+  overflow: auto;
+
   @media ${QUERIES.tabletAndSmaller} {
     justify-content: space-between;
     align-items: center;
@@ -225,5 +231,5 @@ const Filler = styled.div`
   }
 `;
 
-const NavLink = styled.a`
-/***** josh's solution *****/ 
+// const NavLink = styled.a``
+/***** josh's solution *****/
