@@ -1,3 +1,107 @@
 /* module six text-wrapping and ellipsis */
 
+.title {
+  hyphens: auto;
+}
+
+.description p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 250px;
+  -webkit-line-clamp: 3;
+}
+
+/* josh's solution */
+
+.title {
+  hyphens: auto;
+}
+
+.description p {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  overflow: hidden;
+  /* text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 250px;
+  -webkit-line-clamp: 3; */
+}
+
+/* josh's solution */
+
 /* module six text-wrapping and ellipsis */
+
+/* module six build a book */
+
+.wrapper {
+  padding: 32px;
+  max-width: 64rem;
+  margin: 32px auto;
+  border: 2px solid hsl(35deg 10% 40%);
+  column-count: 2;
+}
+
+.wrapper p:first-of-type::first-letter {
+  font-size: calc(32 / 16 * 1rem);
+  color: red;
+  float: left;
+}
+
+.wrapper p:first-of-type {
+  text-indent: 0rem;
+}
+
+.wrapper p {
+  text-indent: 2rem;
+  text-align: justify;
+}
+
+* {
+  font-family: "Merriweather", serif;
+}
+
+/* josh's solution */
+
+.wrapper {
+  column-count: 2;
+  column-gap: 150px;
+  max-width: 64rem;
+  margin: 32px auto;
+  border: 2px solid hsl(35deg 10% 40%);
+  padding: 50px;
+  background: linear-gradient(
+    to right,
+    hsl(35deg, 30%, 90%),
+    hsl(35deg, 30%, 90%) 47%,
+    hsl(35deg, 30%, 70%) 49.5%,
+    hsl(35deg, 20%, 50%) 50%,
+    hsl(35deg, 30%, 70%) 50.5%,
+    hsl(35deg, 30%, 90%) 53%,
+    hsl(35deg, 30%, 90%)
+  );
+}
+h2 {
+  font-size: 2rem;
+  margin-bottom: 2em;
+}
+p {
+  text-align: justify;
+}
+p:first-of-type:first-letter {
+  font-size: 3em;
+  float: left;
+  line-height: 1em;
+  margin-right: 0.2em;
+}
+p:not(:first-of-type) {
+  text-indent: 2em;
+}
+* {
+  font-family: "Merriweather", serif;
+}
+
+/* josh's solution */
+
+/* module six build a book */
