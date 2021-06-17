@@ -109,3 +109,93 @@ p:not(:first-of-type) {
 /* masonry layout */
 
 /* masonry layout */
+
+/* swoops */
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  width: 100%;
+  /* TODO */
+  object-fit: cover;
+  object-position: top right;
+}
+
+/* swoops */
+
+/* josh's solution swoops */
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  width: 100%;
+  min-height: 150px;
+  object-fit: cover;
+  object-position: left center;
+}
+
+/* josh's solution swoops */
+
+/* The Whispering Owl */
+
+.reviews {
+  text-align: center;
+  min-width: 300px;
+}
+
+.average-rating {
+  font-size: 1.25rem;
+  margin-top: 32px;
+  color: gold;
+  font-style: italic;
+}
+body {
+  margin: 0;
+  padding: 0;
+  color: white;
+}
+
+.book-img {
+  /*
+    We'll learn more about this fancy
+    property in a future module!
+  */
+  filter: drop-shadow(-8px 32px 10px hsl(260deg 50% 4% / 0.5));
+}
+
+/* josh's solution */
+
+.reviews {
+  text-align: center;
+  min-width: 300px;
+}
+
+.average-rating {
+  font-size: 1.25rem;
+  margin-top: 32px;
+  color: gold;
+  font-style: italic;
+}
+body {
+  margin: 0;
+  padding: 0;
+  color: white;
+}
+
+.book-img {
+  /*
+    We'll learn more about this fancy
+    property in a future module!
+  */
+  filter: drop-shadow(-8px 32px 10px hsl(260deg 50% 4% / 0.5));
+}
+
+/* josh's solution */
+
+/* The Whispering Owl */
