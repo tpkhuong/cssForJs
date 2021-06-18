@@ -144,7 +144,21 @@ img {
 
 /* The Whispering Owl */
 
+main {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* we had the right idea. using flex: 1 on both .img-wrapper and .reviews which are flex items. however in our markup we didnt wrapper our img inside our .img-wrapper
+setting a min-width on the .img-wrapper was correct too.
+*/
+.img-wrapper {
+  flex-grow: 1;
+  align-self: center;
+}
+
 .reviews {
+  flex: 1;
   text-align: center;
   min-width: 300px;
 }
@@ -166,11 +180,34 @@ body {
     We'll learn more about this fancy
     property in a future module!
   */
+  width: 100%;
+  min-width: 300px;
   filter: drop-shadow(-8px 32px 10px hsl(260deg 50% 4% / 0.5));
 }
 
 /* josh's solution */
 
+main {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px 0;
+}
+
+.img-wrapper {
+  align-self: center;
+}
+
+.img-wrapper,
+.reviews {
+  flex: 1;
+}
+
+.img-wrapper img {
+  width: 100%;
+  min-width: 300px;
+  object-position: -32px 0;
+}
+
 .reviews {
   text-align: center;
   min-width: 300px;
@@ -193,6 +230,7 @@ body {
     We'll learn more about this fancy
     property in a future module!
   */
+
   filter: drop-shadow(-8px 32px 10px hsl(260deg 50% 4% / 0.5));
 }
 
