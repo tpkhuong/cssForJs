@@ -22,9 +22,12 @@ const Hero = () => {
         "
         />
 
-        <HeroImage alt="" src="/images/hero-img.jpg" />
+        <HeroImage
+          alt="Brown Cat staring straight"
+          src="/images/hero-img.jpg"
+        />
       </picture>
-      <Swoop src="/swoop.svg" />
+      <Swoop alt="" src="/swoop.svg" />
     </Wrapper>
   );
 };
