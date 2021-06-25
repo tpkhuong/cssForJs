@@ -47,7 +47,13 @@ const Tags = styled.ul`
 `;
 
 const Tag = styled.li`
-  padding: 4px 8px;
+  /* padding: 4px 8px; */
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  padding: 4px 12px 2px 8px;
   background: var(--color-gray-300);
   font-size: 0.875rem;
   font-weight: 475;
