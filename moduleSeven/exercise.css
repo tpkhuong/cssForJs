@@ -100,6 +100,7 @@ body {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   min-height: 100%;
+  gap: 0px 8px;
 }
 
 .box {
@@ -109,24 +110,169 @@ body {
 
 .box.one {
   background-color: pink;
+  justify-self: end;
+  --rect-width: 25px;
 }
 .box.two {
   background-color: pink;
+  --rect-width: 75px;
 }
 .box.three {
   background-color: lavender;
+  justify-self: end;
+  --rect-width: 50px;
 }
 .box.four {
   background-color: lavender;
+  --rect-width: 50px;
 }
 .box.five {
   background-color: honeydew;
+  justify-self: end;
+  --rect-width: 75px;
 }
 .box.six {
   background-color: honeydew;
+  --rect-width: 25px;
 }
 
 html,
 body {
   height: 100%;
 }
+
+/* josh's solution */
+
+.wrapper {
+  --rect-width: 100px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-content: center;
+  gap: 4px;
+  min-height: 100%;
+}
+.box:nth-of-type(odd) {
+  justify-self: end;
+}
+.box {
+  width: var(--rect-width);
+  height: 80px;
+}
+.box.one {
+  background-color: pink;
+  width: calc(var(--rect-width) * 0.25);
+}
+.box.two {
+  background-color: pink;
+  width: calc(var(--rect-width) * 0.75);
+}
+.box.three {
+  background-color: lavender;
+  width: calc(var(--rect-width) * 0.5);
+}
+.box.four {
+  background-color: lavender;
+  width: calc(var(--rect-width) * 0.5);
+}
+.box.five {
+  background-color: honeydew;
+  width: calc(var(--rect-width) * 0.75);
+}
+.box.six {
+  background-color: honeydew;
+  width: calc(var(--rect-width) * 0.25);
+}
+html,
+body {
+  height: 100%;
+}
+
+/* Holy Grail */
+
+html,
+body {
+  height: 100%;
+}
+
+.grid-wrapper {
+  min-height: 100%;
+  display: grid;
+  grid-template-columns: 200px 1fr 150px;
+  grid-template-rows: 4rem 1fr 5rem;
+  grid-template-areas:
+    "header header header"
+    "nav main sidebar"
+    "footer footer footer";
+}
+
+.header {
+  grid-area: header;
+  /* background-color: lightyellow; */
+}
+
+.navigation {
+  grid-area: nav;
+  /* background-color: lightgreen; */
+}
+
+.main-content {
+  grid-area: main;
+  /* background-color: lightblue; */
+}
+
+.sidebar {
+  grid-area: sidebar;
+  /* background-color: lightseagreen; */
+}
+
+.footer {
+  grid-area: footer;
+  /* background-color: lightcoral; */
+}
+
+/* josh's solution */
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 200px 1fr 150px;
+  grid-template-rows: 4rem 1fr 5rem;
+  grid-template-areas:
+    "header header header"
+    "sidebar main ad"
+    "footer footer footer";
+  min-height: 100%;
+}
+header {
+  grid-area: header;
+}
+nav {
+  grid-area: sidebar;
+}
+main {
+  grid-area: main;
+}
+aside {
+  grid-area: ad;
+}
+footer {
+  grid-area: footer;
+}
+
+/* World-Famous Grid Snippet */
+/* <!--
+• 320px minimum column width
+• 16px gap
+• No overflow on smaller screens
+--> */
+.grid {
+  --min-column-width: min(320px, 100%);
+  display: grid;
+  padding: 16px;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(var(--min-column-width), 1fr)
+  );
+  gap: 16px;
+}
+
+/* josh's solution */
