@@ -47,10 +47,15 @@ const SuperHeader = styled.div`
   padding: 16px 0;
   background: var(--color-gray-900);
   color: white;
+
+  @media ${QUERIES.desktopAndUp} {
+    display: none;
+  }
 `;
 
 const Row = styled(MaxWidthWrapper)`
   display: flex;
+
   justify-content: space-between;
 `;
 
@@ -70,16 +75,31 @@ const ActionGroup = styled.div`
 // we will add to element to MainHeader one before the Logo and one after Logo
 
 const IconContainer = styled.div`
-  svg:first-child {
-    margin-inline-end: 32px;
+  display: none;
+
+  @media ${QUERIES.desktopAndUp} {
+    display: revert;
+    svg:first-child {
+      margin-inline-end: 32px;
+    }
   }
 `;
 
 const ButtonContainer = styled.div`
-  a {
-    color: var(--color-gray-900);
-    font-style: italic;
-    font-size: calc(14 / 16 * 1rem);
+  display: none;
+  @media ${QUERIES.desktopAndUp} {
+    display: revert;
+
+    text-align: center;
+    margin-block-start: 24px;
+    a {
+      display: inline-block;
+      margin-block-start: 8px;
+      color: var(--color-gray-900);
+      font-style: italic;
+      font-size: calc(14 / 16 * 1rem);
+      border-bottom: 0.8px solid currentColor;
+    }
   }
 `;
 
@@ -94,10 +114,13 @@ const SubscribeButton = styled.button`
 
 const MainHeader = styled(MaxWidthWrapper)`
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-top: 32px;
-  margin-bottom: 48px;
+  justify-content: center;
+  @media ${QUERIES.desktopAndUp} {
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 0px;
+    margin-bottom: 48px;
+  }
 `;
 
 export default Header;
