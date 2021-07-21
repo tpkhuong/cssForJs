@@ -115,6 +115,14 @@ const SubscribeButton = styled.button`
 const MainHeader = styled(MaxWidthWrapper)`
   display: flex;
   justify-content: center;
+  padding-block-start: 4px;
+  padding-block-end: 48px;
+
+  @media ${QUERIES.tabletAndUp} {
+    padding-block-start: 20px;
+    padding-block-end: 72px;
+  }
+
   @media ${QUERIES.desktopAndUp} {
     align-items: center;
     justify-content: space-between;
