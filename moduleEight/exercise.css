@@ -1,0 +1,121 @@
+/* dialog layout */
+
+.dialog-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: hsl(0deg 0% 0% / 0.75);
+}
+
+.dialog-content {
+  width: 600px;
+  max-width: 100%;
+  height: 400px;
+  background: white;
+  border-radius: 6px;
+  transform: scale(0.85);
+  margin-inline: auto;
+}
+
+.close-btn {
+  padding: 16px;
+  background: transparent;
+  border: none;
+  font-weight: bold;
+  transform: translate(545px, -45px);
+}
+
+/* josh's solution */
+
+.dialog-wrapper {
+  display: grid;
+  place-content: center;
+}
+.dialog-content {
+  position: relative;
+}
+.close-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translateY(-100%);
+}
+
+/* translated cards */
+
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 8px;
+  padding: 16px;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+  background: white;
+  border-radius: 8px;
+  border: 2px solid hsl(240deg 100% 75%);
+  transition: transform 1s;
+}
+
+.card-link:hover .card,
+.card-link:focus .card {
+  /* only the child .card is lift up instead of the <a> tag .card-link */
+  transform: translateY(-16px);
+}
+
+.card img {
+  width: 64px;
+  height: 64px;
+}
+
+/* josh's solution */
+
+.card {
+  transition: transform 250ms;
+}
+.card-link:hover .card {
+  transform: translateY(-16px);
+}
+
+/* photo zoom */
+
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 8px;
+}
+.thumbnail {
+  display: block;
+  width: 100%;
+}
+
+.thumbnail-wrapper img {
+  transition: transform 1s;
+}
+.thumbnail-wrapper:hover img {
+  /* make img bigger on hover of <a> */
+  transform: scale(1.2);
+}
+
+.thumbnail-wrapper {
+  /* img doesnt bleed out of parent container */
+  overflow: hidden;
+}
+
+/* josh's solution */
+
+.thumbnail {
+  transition: transform 500ms;
+}
+.thumbnail-wrapper {
+  overflow: hidden;
+}
+.thumbnail-wrapper:hover .thumbnail {
+  transform: scale(1.2);
+}
