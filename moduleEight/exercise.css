@@ -119,3 +119,102 @@
 .thumbnail-wrapper:hover .thumbnail {
   transform: scale(1.2);
 }
+
+/* Pop-Up Help Circle */
+
+.help-circle {
+  /* using position: absolute instead of position:fixed we will get the scroll bar on the right  */
+  position: absolute;
+  /* bottom: -62px to hide button */
+  /* bottom: -62px; */
+  /* bottom: 32px to show button */
+  bottom: 32px;
+  right: 32px;
+  /* use transition to show */
+  transform: translateY(92px);
+  animation: slideUp 500ms linear backwards;
+  animation-delay: 1000ms;
+}
+
+@keyframes slideUp {
+  0% {
+    display: none;
+  }
+
+  100% {
+    display: revert;
+    transform: translateY(0px);
+  }
+}
+
+/* josh's solution */
+
+/* any css variables defined in @keyframes animation is inherited from the place that the animation is used. */
+@keyframes slide-in {
+  from {
+    transform: translateY(calc(100% + var(--spacing)));
+  }
+  to {
+    transform: translateY(0%);
+  }
+}
+
+/* continue from above comments. when we set animation slide-in in .help-circle any variables available to .help-circle or a parent selector
+will become available to the keyframe animation
+*/
+.help-circle {
+  --spacing: 32px;
+  position: fixed;
+  bottom: var(--spacing);
+  right: var(--spacing);
+  animation: slide-in 500ms backwards;
+  animation-delay: 1000ms;
+}
+
+/* Waving Hand */
+
+@keyframes wave-hand {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    /* play around with the deg */
+    transform: rotate(45deg);
+  }
+}
+
+.waving-hand {
+  transform-origin: bottom right;
+  animation: wave-hand 1000ms infinite alternate;
+  /* animation-delay: 500ms; */
+}
+
+/* apply this to span choose between inline-block and block */
+.wave {
+  display: inline-block;
+  display: block;
+  /* selecting the element will help us see the transform-origin */
+  transform-origin: bottom right;
+  /* increase duration to make waving motion slower */
+  animation: wave-hand 1000ms infinite alternate;
+}
+
+/* span element is inline when we changed display to inline-block or block our animation worked
+we didnt have to apply our declarations to <p> element which is the parent wrapper of <span>
+*/
+
+/* josh's solution */
+
+@keyframes wave {
+  from {
+    transform: rotate(-10deg);
+  }
+  to {
+    transform: rotate(30deg);
+  }
+}
+.wave {
+  display: inline-block;
+  animation: wave 1000ms infinite alternate ease-in-out;
+  transform-origin: 75% 80%;
+}
