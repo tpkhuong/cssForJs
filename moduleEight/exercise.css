@@ -237,3 +237,23 @@ we didnt have to apply our declarations to <p> element which is the parent wrapp
 
   transition: transform 150ms ease-out;
 }
+
+/* help circle */
+
+@keyframes slide-in {
+  from {
+    transform: translateY(calc(100% + var(--spacing)));
+  }
+  to {
+    transform: translateY(0%);
+  }
+}
+
+.help-circle {
+  --spacing: 32px;
+  position: fixed;
+  bottom: var(--spacing);
+  right: var(--spacing);
+  animation: slide-in 500ms backwards;
+  animation-delay: 1000ms;
+}
